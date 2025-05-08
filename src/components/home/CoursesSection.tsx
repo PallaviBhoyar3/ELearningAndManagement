@@ -16,42 +16,42 @@ import { Badge } from "@/components/ui/badge";
 const coursesData = [
   {
     id: 1,
-    title: "Complete Web Development Bootcamp",
-    description: "Learn HTML, CSS, JavaScript, React and Node.js",
+    title: "Complete Web Development",
+    description: "Learn HTML, CSS, JavaScript, React js",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     price: 89.99,
     rating: 4.8,
     students: 12453,
     duration: "48 hours",
-    instructor: "Sarah Johnson",
+    instructor: "Lorem Ipsum",
     level: "Beginner",
     category: "Web Development",
     bestseller: true,
   },
   {
     id: 2,
-    title: "Data Science and Machine Learning",
-    description: "Master Python, pandas, scikit-learn, and TensorFlow",
+    title: "Frontend Developement with React",
+    description: "Learn HTML, CSS, JavaScript, React js",
     image: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e",
     price: 94.99,
     rating: 4.7,
     students: 8734,
     duration: "52 hours",
-    instructor: "Michael Chen",
+    instructor: "Lorem Ipsum",
     level: "Intermediate",
-    category: "Data Science",
+    category: "Web Development",
     bestseller: true,
   },
   {
     id: 3,
-    title: "Mobile App Development with Flutter",
+    title: "Mobile App Development with React Native",
     description: "Build iOS and Android apps with one codebase",
     image: "https://images.unsplash.com/photo-1617040619263-41c5a9ca7521",
     price: 79.99,
     rating: 4.6,
     students: 6329,
     duration: "36 hours",
-    instructor: "Olivia Davis",
+    instructor: "Lorem Ipsum",
     level: "Intermediate",
     category: "Mobile Development",
     bestseller: false,
@@ -65,7 +65,7 @@ const coursesData = [
     rating: 4.9,
     students: 9127,
     duration: "28 hours",
-    instructor: "James Wilson",
+    instructor: "Lorem Ipsum",
     level: "Advanced",
     category: "JavaScript",
     bestseller: false,
@@ -75,7 +75,6 @@ const coursesData = [
 const categories = [
   "All",
   "Web Development",
-  "Data Science",
   "Mobile Development",
   "JavaScript",
 ];
@@ -92,9 +91,9 @@ export default function CoursesSection() {
     <section id="courses" className="section-padding bg-muted/30">
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="section-title">Explore Our Popular Courses</h2>
+          <h2 className="section-title">Explore Our Courses</h2>
           <p className="section-subtitle">
-            Discover the knowledge you need to succeed in your career and personal growth
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
 

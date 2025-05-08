@@ -28,7 +28,7 @@ export default function Navbar() {
       <div className="container-custom flex h-16 items-center">
         <div className="flex items-center justify-between w-full">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">LearnHub</span>
+            <span className="text-2xl font-bold text-primary">E-Learning</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">

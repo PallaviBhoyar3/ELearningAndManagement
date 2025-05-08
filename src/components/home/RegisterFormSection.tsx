@@ -54,8 +54,7 @@ export default function RegisterFormSection() {
           <div className="space-y-6 lg:order-2">
             <h2 className="section-title">Register for a Free Consultation</h2>
             <p className="text-lg text-muted-foreground">
-              Not sure which course is right for you? Register for a free consultation with our education advisors to get personalized guidance.
-            </p>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dignissimos cumque hic doloremque, omnis quia!            </p>
             
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -93,7 +92,7 @@ export default function RegisterFormSection() {
               </div>
             </div>
             
-            <div className="bg-muted p-4 rounded-lg">
+            {/* <div className="bg-muted p-4 rounded-lg">
               <p className="text-sm font-medium mb-1">Join over 100,000 students</p>
               <p className="text-sm text-muted-foreground">
                 "The consultation helped me choose the perfect course for my career transition. I'm now working as a full-stack developer!"
@@ -111,7 +110,7 @@ export default function RegisterFormSection() {
                   <p className="text-xs text-muted-foreground">Former Marketing Specialist</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           
           <div className="lg:order-1">
@@ -131,7 +130,7 @@ export default function RegisterFormSection() {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="abc xyz"
                       required
                     />
                   </div>
@@ -144,7 +143,7 @@ export default function RegisterFormSection() {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john.doe@example.com"
+                      placeholder="abcxyz@gmail.com"
                       required
                     />
                   </div>
@@ -156,7 +155,7 @@ export default function RegisterFormSection() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+91 1234567890"
                     />
                   </div>
                   

@@ -21,8 +21,7 @@ export default function HeroSection() {
               Learn Without <span className="text-primary">Limits</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-md">
-              Discover thousands of courses, expert instructors, and a community
-              of learners ready to help you achieve your goals.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui itaque deleniti ipsam numquam error ut optio suscipit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>

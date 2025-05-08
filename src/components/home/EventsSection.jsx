@@ -16,7 +16,7 @@ const events = [
     id: 1,
     title: "Web Development Workshop",
     description:
-      "Join us for a hands-on workshop on modern frontend frameworks and best practices.",
+      "Join us for a hands-on workshop.",
     date: "June 15, 2025",
     time: "10:00 AM - 2:00 PM",
     location: "Online (Zoom)",
@@ -28,23 +28,23 @@ const events = [
     id: 2,
     title: "Data Science Conference",
     description:
-      "Annual conference featuring keynotes from industry leaders and networking opportunities.",
+      "lorem dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..",
     date: "July 8-10, 2025",
     time: "9:00 AM - 5:00 PM",
-    location: "Tech Convention Center",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3",
+    location: "Pune",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
     category: "Conference",
     featured: false,
   },
   {
     id: 3,
-    title: "UI/UX Design Masterclass",
+    title: "UI/UX Design class",
     description:
-      "Learn the latest design trends and tools from industry-leading designers.",
+      "lorem dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "June 25, 2025",
     time: "1:00 PM - 4:00 PM",
-    location: "Online (Zoom)",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
+    location: "Online",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
     category: "Masterclass",
     featured: false,
   },
@@ -52,10 +52,10 @@ const events = [
     id: 4,
     title: "Tech Career Fair",
     description:
-      "Connect with top companies hiring tech talent and explore new opportunities.",
+      "lorem dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "August 5, 2025",
     time: "10:00 AM - 3:00 PM",
-    location: "Virtual Event",
+    location: "Pune",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
     category: "Career",
     featured: false,
@@ -69,7 +69,7 @@ export default function EventsSection() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="section-title">Upcoming Events</h2>
           <p className="section-subtitle">
-            Join our live events, workshops, and webinars to enhance your learning experience
+            Join our live events, workshops to enhance your learning experience
           </p>
         </div>
 
@@ -91,12 +91,12 @@ export default function EventsSection() {
                   alt={event.title}
                   className="object-cover w-full h-full transition-transform hover:scale-105 duration-500"
                 />
-                <Badge
+                {/* <Badge
                   className="absolute top-2 left-2"
                   variant={event.featured ? "default" : "secondary"}
                 >
                   {event.category}
-                </Badge>
+                </Badge> */}
               </div>
               <CardHeader className="p-4">
                 <CardTitle

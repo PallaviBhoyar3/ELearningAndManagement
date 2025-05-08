@@ -31,8 +31,7 @@ export default function SpecialOfferSection() {
               Get 50% Off on Premium Courses
             </h2>
             <p className="text-lg text-muted-foreground">
-              Upgrade your skills with our most popular courses. Limited-time discount
-              available for the next 48 hours only.
+              lorem 130 dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus
             </p>
             
             <div className="flex gap-4 pt-4">
@@ -76,15 +75,15 @@ export default function SpecialOfferSection() {
             </div>
             <CardHeader>
               <div className="flex justify-between items-center">
-                <Badge variant="outline">Data Science</Badge>
+                {/* <Badge variant="outline">Data Science</Badge> */}
                 <div className="flex items-center space-x-1">
                   <span className="line-through text-muted-foreground">$199.99</span>
                   <span className="font-bold text-lg">$99.99</span>
                 </div>
               </div>
-              <CardTitle>Complete Data Science & Machine Learning Bootcamp 2024</CardTitle>
+              <CardTitle>React Native And React Js Training</CardTitle>
               <CardDescription>
-                Master Python, SQL, statistics, data visualization, machine learning, and deep learning
+                Master Javascript, React JS, React Native, HTML, CSS.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -106,19 +105,19 @@ export default function SpecialOfferSection() {
                       <svg className="h-4 w-4 mr-2 mt-0.5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span>Python for Data Analysis</span>
+                      <span>React Native</span>
                     </li>
                     <li className="flex items-start">
                       <svg className="h-4 w-4 mr-2 mt-0.5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span>Machine Learning & Deep Learning Models</span>
+                      <span>React Js</span>
                     </li>
                     <li className="flex items-start">
                       <svg className="h-4 w-4 mr-2 mt-0.5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <span>SQL & NoSQL Database Management</span>
+                      <span>HTML, CSS and Javascript</span>
                     </li>
                   </ul>
                 </div>

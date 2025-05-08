@@ -5,8 +5,8 @@ const instructorsData = [
   {
     id: 1,
     name: "Dr. Sarah Johnson",
-    role: "Web Development Expert",
-    bio: "Former Google engineer with 10+ years of experience teaching web development",
+    role: "Mobile App Development",
+    bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     courses: 12,
     students: "10K+",
@@ -15,8 +15,8 @@ const instructorsData = [
   {
     id: 2,
     name: "Prof. Michael Chen",
-    role: "Data Science Specialist",
-    bio: "PhD in Machine Learning with experience at leading research institutions",
+    role: "Mobile App Development",
+    bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a",
     courses: 8,
     students: "15K+",
@@ -25,8 +25,8 @@ const instructorsData = [
   {
     id: 3,
     name: "Olivia Rodriguez",
-    role: "UX/UI Design Instructor",
-    bio: "Award-winning designer with 8+ years at top tech companies",
+    role: "Mobile App Development",
+    bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
     courses: 6,
     students: "8K+",
@@ -36,7 +36,7 @@ const instructorsData = [
     id: 4,
     name: "James Wilson",
     role: "Mobile App Development",
-    bio: "iOS developer and entrepreneur who built multiple successful apps",
+    bio: "ilorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
     courses: 10,
     students: "12K+",
@@ -49,9 +49,9 @@ export default function InstructorsSection() {
     <section id="instructors" className="section-padding">
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="section-title">Learn from Industry Experts</h2>
+          <h2 className="section-title">Learn from Experts</h2>
           <p className="section-subtitle">
-            Our instructors are passionate professionals with real-world experience
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, nisi?
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function InstructorsSection() {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
-            Join our team of expert instructors and share your knowledge with students worldwide
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, nisi?
           </p>
           <a
             href="#"
