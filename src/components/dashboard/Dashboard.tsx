@@ -37,7 +37,7 @@ const Dashboard = () => {
           >
             Welcome back, {user?.name}!
           </motion.h1>
-          <p className="text-gray-600">Track your progress and continue learning</p>
+          <p className="text-gray-600">Track your progress & continue learning</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -87,7 +87,7 @@ const Dashboard = () => {
           
         </div>
         
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
+        {/* <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
           <div className="border-b border-gray-200">
             <div className="flex overflow-x-auto">
               {tabs.map((tab, index) => {
@@ -167,7 +167,7 @@ const Dashboard = () => {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">

@@ -24,7 +24,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       if (email && password) {
         setUser({
           id: '1',
-          name: 'John Doe',
+          name: 'Pallavi',
           email: email,
         });
         return true;
