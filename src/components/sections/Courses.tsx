@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import { 
-  // Star, 
-  Filter, 
-  // Bookmark, 
-  // BookmarkCheck 
-} from 'lucide-react';
+// import { 
+//   // Star, 
+//   Filter, 
+//   // Bookmark, 
+//   // BookmarkCheck 
+// } from 'lucide-react';
 import { courses } from '../../data/courses';
 // import { useCart } from '../../contexts/CartContext';
 import CourseCard from '../ui/CourseCard';
+// import { useDispatch } from 'react-redux';
 
 const Courses = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [showFilters, setShowFilters] = useState(false);
+  // const [showFilters, setShowFilters] = useState(false);
   // const { addToCart } = useCart();
   
   const categories = ['All', 'Web Development', 'React JS', 'Frontend Development', 'Mobile Development'];
@@ -19,6 +20,8 @@ const Courses = () => {
   const filteredCourses = activeCategory === 'All' 
     ? courses 
     : courses.filter(course => course.category === activeCategory);
+
+    // const dispatch = useDispatch()
 
   return (
     <section id="courses" className="bg-gray-50 py-16">

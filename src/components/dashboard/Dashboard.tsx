@@ -4,6 +4,7 @@ import { BookOpen, CheckCircle, Clock, Star, Award, FileText, Video, Settings } 
 import { useAuth } from '../../contexts/AuthContext';
 import DashboardCourseCard from './DashboardCourseCard';
 import { enrolledCourses } from '../../data/enrolledCourses';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -24,6 +25,12 @@ const Dashboard = () => {
                         activeTab === 'completed' ? completedCourses : [];
 
   const totalProgress = enrolledCourses.reduce((sum, course) => sum + course.progress, 0) / enrolledCourses.length;
+
+// get cart items using Redux ================>
+// const cartItems = useSelector((state) => console.log("======@ dashboard", state));
+// console.log("cartItems", cartItems)
+  // const dispatch = useDispatch();
+  // console.log("dispatch", dispatch)
 
   return (
     <div className="bg-gray-50 min-h-screen py-10">

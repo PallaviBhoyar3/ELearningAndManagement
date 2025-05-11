@@ -12,6 +12,10 @@ import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
 import { WishlistProvider } from './contexts/WishlistContext';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import CourseList from './redux/CourseList';
+import CartList from './redux/CartList';
 
 function App() {
   const [showDashboard, setShowDashboard] = useState(false);
@@ -27,6 +31,7 @@ function App() {
   }, []);
 
   return (
+    <Provider store={store}>
     <ThemeProvider>
       <AuthProvider>
         <CartProvider>
@@ -39,7 +44,13 @@ function App() {
                 ) : (
                   <>
                     <Hero />
-                    <Courses />
+                    {/* <Courses /> */}
+
+                  {/* ==== test files for redux ========= */}
+                        <CourseList/>
+                        <CartList/>
+                    {/* ===================== */}
+
                     <Trainers />
                     <SpecialOffers />
                     <Reviews />
@@ -74,6 +85,7 @@ function App() {
         </CartProvider>
       </AuthProvider>
     </ThemeProvider>
+    </Provider>
   );
 }
 

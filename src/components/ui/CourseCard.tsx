@@ -5,6 +5,8 @@ import { Course } from '../../types';
 import { useCart } from '../../contexts/CartContext';
 import { useWishlist } from '../../contexts/WishlistContext';
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+// import { addToCart } from '../../redux/slices/cartSlice';
 
 type CourseCardProps = {
   course: Course;
@@ -30,10 +32,20 @@ const CourseCard = ({ course }: CourseCardProps) => {
     }
   };
 
+  // using redux ===============================================>
+  // const dispatch = useDispatch()
+
   const handleAddToCart = () => {
-    addToCart(course);
+    // console.log("course", course)
+    addToCart(course);    // using contexthook
+
+    //  dispatch(addToCart(course))    // using Reduxtoolkit
     toast.success('Added to cart');
   };
+
+
+
+  
 
   return (
     <motion.div 

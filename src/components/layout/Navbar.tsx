@@ -168,6 +168,17 @@ const Navbar = ({ onDashboardClick }: NavbarProps) => {
                   </span>
                 )}
               </motion.button>
+
+{/* // for redux testing==================> */}
+              <motion.button
+                onClick={toggleTheme}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                aria-label="Toggle theme"
+              >
+                  <Bookmark className='h-6 w-6' />
+              </motion.button>
               
               {isAuthenticated ? (
                 <div className="relative">
