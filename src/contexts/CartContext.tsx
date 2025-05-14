@@ -13,6 +13,7 @@ type CartContextType = {
   clearCart: () => void;
   getTotalPrice: () => number;
   getItemCount: () => number;
+  isInCart: (courseId: string) => boolean;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -22,13 +23,13 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const addToCart = (course: Course) => {
     setItems((prevItems) => {
-      
+      // Check if course is already in cart
       const existingItemIndex = prevItems.findIndex(
         (item) => item.course.id === course.id
       );
 
       if (existingItemIndex >= 0) {
-        
+        // Course already in cart, increment quantity
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
           ...updatedItems[existingItemIndex],
@@ -54,13 +55,17 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const getTotalPrice = () => {
     return items.reduce(
-      (total, item) => total + item.course.price * item.quantity,
+      (total, item) => total + (item.course.discountPrice || item.course.price) * item.quantity,
       0
     );
   };
 
   const getItemCount = () => {
     return items.reduce((count, item) => count + item.quantity, 0);
+  };
+
+  const isInCart = (courseId: string) => {
+    return items.some((item) => item.course.id === courseId);
   };
 
   return (
@@ -72,6 +77,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         clearCart,
         getTotalPrice,
         getItemCount,
+        isInCart,
       }}
     >
       {children}
