@@ -13,7 +13,7 @@ const SpecialOffers = () => {
   const minutesRemaining = 45;
 
   return (
-    <section id="special-offers" className="py-16 bg-gradient-to-r from-orange-50 to-blue-50">
+    <section id="special-offers" className="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <div className="inline-block bg-orange-100 text-orange-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
@@ -23,7 +23,7 @@ const SpecialOffers = () => {
             Special Discounts Just For You
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Grab these high-rated courses at unbelievable prices before they're gone.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, voluptatibus.
           </p>
         </div>
         
@@ -64,6 +64,11 @@ const SpecialOffers = () => {
           ))}
         </div>
         
+        <div className="mt-12 text-center">
+          <button className="mt-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none">
+            View All Deals
+          </button>
+        </div>
       </div>
     </section>
   );

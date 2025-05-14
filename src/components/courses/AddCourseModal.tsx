@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import { useCourses } from '../../contexts/CourseContext';
+import toast from 'react-hot-toast';
 
 type AddCourseModalProps = {
   isOpen: boolean;
@@ -8,14 +9,14 @@ type AddCourseModalProps = {
 };
 
 const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
-//   const { addCourse } = useCourses();
+  const { addCourse } = useCourses();
   const [formData, setFormData] = useState({
     title: '',
     instructor: '',
     description: '',
     price: '',
     duration: '',
-    level: 'Beginner',
+    level: 'Beginner' as 'Beginner' | 'Intermediate' | 'Advanced',
     category: '',
     image: '',
     rating: 0,
@@ -28,30 +29,44 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
     e.preventDefault();
     setLoading(true);
 
-    // try {
-    //   addCourse({
-    //     ...formData,
-    //     price: parseFloat(formData.price),
-    //     rating: parseFloat(formData.rating.toString()),
-    //     studentsEnrolled: 0,
-    //   });
-    //   onClose();
-    //   setFormData({
-    //     title: '',
-    //     instructor: '',
-    //     description: '',
-    //     price: '',
-    //     duration: '',
-    //     level: 'Beginner',
-    //     category: '',
-    //     image: '',
-    //     rating: 0,
-    //   });
-    // } catch (error) {
-    //   console.error('Error adding course:', error);
-    // } finally {
-    //   setLoading(false);
-    // }
+    try {
+      // Validate form data
+      if (!formData.title || !formData.instructor || !formData.description || !formData.price) {
+        toast.error('Please fill in all required fields');
+        return;
+      }
+
+      if (isNaN(parseFloat(formData.price)) || parseFloat(formData.price) < 0) {
+        toast.error('Please enter a valid price');
+        return;
+      }
+
+      // Add the course
+      addCourse({
+        ...formData,
+        price: parseFloat(formData.price),
+        rating: parseFloat(formData.rating.toString()),
+      });
+
+      // Reset form and close modal
+      setFormData({
+        title: '',
+        instructor: '',
+        description: '',
+        price: '',
+        duration: '',
+        level: 'Beginner',
+        category: '',
+        image: '',
+        rating: 0,
+      });
+      onClose();
+    } catch (error) {
+      console.error('Error adding course:', error);
+      toast.error('Failed to add course');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

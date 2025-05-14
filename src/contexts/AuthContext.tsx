@@ -20,7 +20,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (email: string, password: string): Promise<boolean> => {
+    // In a real app, this would make an API call to your backend
     try {
+      // Simulating a successful login for demo purposes
       if (email && password) {
         setUser({
           id: '1',
@@ -37,7 +39,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const signup = async (name: string, email: string, password: string): Promise<boolean> => {
+    // In a real app, this would make an API call to your backend
     try {
+      // Simulating a successful signup for demo purposes
       if (name && email && password) {
         setUser({
           id: '1',
