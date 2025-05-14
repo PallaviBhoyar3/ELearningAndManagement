@@ -44,11 +44,11 @@ function App() {
                 ) : (
                   <>
                     <Hero />
-                    {/* <Courses /> */}
+                    <Courses />
 
                   {/* ==== test files for redux ========= */}
-                        <CourseList/>
-                        <CartList/>
+                        {/* <CourseList/>
+                        <CartList/> */}
                     {/* ===================== */}
 
                     <Trainers />
