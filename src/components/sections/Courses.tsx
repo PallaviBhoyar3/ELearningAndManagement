@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Star, Filter, Bookmark, BookmarkCheck, Plus } from 'lucide-react';
-import { useCart } from '../../contexts/CartContext';
+// import { useCart } from '../../contexts/CartContext';
 import { useCourses } from '../../contexts/CourseContext';
 import CourseCard from '../ui/CourseCard';
 import AddCourseModal from '../courses/AddCourseModal';
 
 const Courses = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [showFilters, setShowFilters] = useState(false);
+  // const [showFilters, setShowFilters] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
   const { courses } = useCourses();
   

@@ -22,8 +22,20 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
     rating: 0,
   });
   const [loading, setLoading] = useState(false);
+  const [imagePreview, SetImagePreview] = useState<string | null>(null);
 
   if (!isOpen) return null;
+console.log("formData", formData)
+
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    console.log("=======================",file, URL.createObjectURL(file));
+    if(file){
+      SetImagePreview(URL.createObjectURL(file));
+      setFormData(prev => ({ ...prev, image: file }));
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,6 +80,7 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
       setLoading(false);
     }
   };
+console.log("imagePreview", imagePreview)
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
@@ -172,6 +185,7 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
                   type="text"
                   required
                   value={formData.category}
+                  placeholder='Web Development'
                   onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -191,7 +205,8 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-            
+
+{/* https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 */}
             <div>
               <label htmlFor="image" className="block text-sm font-medium text-gray-700">
                 Image URL
@@ -204,7 +219,26 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
                 onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
-            </div>
+            </div> 
+
+            <div>
+              <label htmlFor="image" className="block text-sm font-medium text-gray-700">
+                Image URL
+              </label>
+              <input
+                id="image"
+                type="file"
+                // accept="image/*"
+                required
+                value={formData.image}
+                // onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
+                onChange={handleImageChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              />
+              {imagePreview && (
+                <img src={imagePreview} alt="Image Preview" className="mt-2 w-full h-auto rounded-md" />
+              )}
+            </div> 
             
             <div className="flex justify-end space-x-3">
               <button
