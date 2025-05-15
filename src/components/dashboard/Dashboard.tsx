@@ -13,7 +13,6 @@ const Dashboard = () => {
     { id: 'enrolled', label: 'My Courses', icon: BookOpen },
     { id: 'progress', label: 'In Progress', icon: Clock },
     { id: 'completed', label: 'Completed', icon: CheckCircle },
-    { id: 'certificates', label: 'Certificates', icon: Award },
   ];
   
   const completedCourses = enrolledCourses.filter(course => course.progress === 100);
@@ -84,33 +83,10 @@ const Dashboard = () => {
               {((completedCourses.length / enrolledCourses.length) * 100).toFixed(0)}% of your courses completed
             </p>
           </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            className="bg-white rounded-lg shadow-md p-6"
-          >
-            <div className="flex items-center mb-4">
-              <div className="bg-orange-100 p-3 rounded-full">
-                <Star className="h-6 w-6 text-orange-600" />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Achievements</h3>
-                <p className="text-2xl font-bold">3 badges</p>
-              </div>
-            </div>
-            <div className="flex justify-between mt-2">
-              <img src="https://via.placeholder.com/40" alt="Badge" className="w-10 h-10 rounded-full" />
-              <img src="https://via.placeholder.com/40" alt="Badge" className="w-10 h-10 rounded-full" />
-              <img src="https://via.placeholder.com/40" alt="Badge" className="w-10 h-10 rounded-full" />
-              <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">+2</div>
-            </div>
-          </motion.div>
         </div>
         
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
-          <div className="border-b border-gray-200">
+          {/* <div className="border-b border-gray-200">
             <div className="flex overflow-x-auto">
               {tabs.map((tab, index) => {
                 const Icon = tab.icon;
@@ -147,9 +123,9 @@ const Dashboard = () => {
                 );
               })}
             </div>
-          </div>
+          </div> */}
           
-          <div className="p-6">
+          {/* <div className="p-6">
             {displayCourses.length === 0 ? (
               <div className="text-center py-12">
                 <div className="mx-auto h-12 w-12 text-gray-400">
@@ -188,7 +164,7 @@ const Dashboard = () => {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -248,43 +224,6 @@ const Dashboard = () => {
             </motion.div>
           </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            className="bg-white rounded-lg shadow-md p-6"
-          >
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Account Settings</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="flex items-center p-2 hover:bg-gray-50 rounded-md text-gray-700 hover:text-blue-600 transition-colors">
-                  <Settings className="h-5 w-5 mr-3 text-gray-400" />
-                  <span>Profile Settings</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 hover:bg-gray-50 rounded-md text-gray-700 hover:text-blue-600 transition-colors">
-                  <FileText className="h-5 w-5 mr-3 text-gray-400" />
-                  <span>Purchase History</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 hover:bg-gray-50 rounded-md text-gray-700 hover:text-blue-600 transition-colors">
-                  <Award className="h-5 w-5 mr-3 text-gray-400" />
-                  <span>Certificates</span>
-                </a>
-              </li>
-            </ul>
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="bg-blue-50 rounded-lg p-4">
-                <h4 className="font-medium text-blue-800 mb-2">Upgrade to Pro</h4>
-                <p className="text-sm text-blue-600 mb-3">Get unlimited access to all premium courses and features.</p>
-                <button className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </div>
