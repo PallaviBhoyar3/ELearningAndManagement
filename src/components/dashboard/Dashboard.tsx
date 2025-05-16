@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, CheckCircle, Clock, Star, Award, FileText, Video, Settings } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
-import DashboardCourseCard from './DashboardCourseCard';
+// import DashboardCourseCard from './DashboardCourseCard';
 import { enrolledCourses } from '../../data/enrolledCourses';
+import ShowVideoModal from '../courses/ShowVideoModal';
 
 const Dashboard = () => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState('enrolled');
+  const [showModal, setShowModal] = useState(false);
   
   const tabs = [
     { id: 'enrolled', label: 'My Courses', icon: BookOpen },
@@ -168,6 +170,11 @@ const Dashboard = () => {
         </div>
       
       </div>
+
+      <ShowVideoModal 
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </div>
   );
 };

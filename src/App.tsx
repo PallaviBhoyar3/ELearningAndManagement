@@ -13,6 +13,8 @@ import { CartProvider } from './contexts/CartContext';
 import { WishlistProvider } from './contexts/WishlistContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CourseProvider } from './contexts/CourseContext';
+import CourseList from './redux/CourseList';
+import CartList from './redux/CartList';
 
 function App() {
   const [showDashboard, setShowDashboard] = useState(false);
@@ -42,7 +44,10 @@ function App() {
                     <>
                       <Hero />
                       <Courses />
-                      
+                      {/* ==================================== */}
+                      {/* <CourseList /> */}
+                      {/* <CartList /> */}
+                      {/* ==================================== */}
                       <Trainers />
                       <SpecialOffers />
                       <Reviews />
