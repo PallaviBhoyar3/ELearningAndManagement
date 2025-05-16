@@ -5,6 +5,7 @@ import { useAuth } from '../../contexts/AuthContext';
 // import DashboardCourseCard from './DashboardCourseCard';
 import { enrolledCourses } from '../../data/enrolledCourses';
 import ShowVideoModal from '../courses/ShowVideoModal';
+import DashboardCourseCard from './DashboardCourseCard';
 
 const Dashboard = () => {
   const { user } = useAuth();
