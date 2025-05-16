@@ -1,17 +1,19 @@
 import { EnrolledCourse } from '../types';
+import Course1 from "../assets/course1.jpeg"
+import Course2 from "../assets/course2.jpeg"
 
 export const enrolledCourses: EnrolledCourse[] = [
   {
     id: '1',
-    title: 'Complete Web Development Bootcamp',
+    title: 'Complete Web Development',
     instructor: 'Sarah Johnson',
-    description: 'Learn HTML, CSS, JavaScript, React, Node.js and more. Build real-world projects and launch your developer career.',
+    description: 'Learn HTML, CSS, JavaScript, React, Node.js and more.',
     price: 129.99,
     discountPrice: 89.99,
     duration: '12 weeks',
     level: 'Beginner',
     category: 'Web Development',
-    image: 'https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: Course1,
     rating: 4.8,
     studentsEnrolled: 12420,
     progress: 65,
@@ -22,15 +24,15 @@ export const enrolledCourses: EnrolledCourse[] = [
   },
   {
     id: '3',
-    title: 'Digital Marketing Mastery',
-    instructor: 'Emma Rodriguez',
-    description: 'Learn SEO, social media marketing, content strategy, Google Analytics, and PPC advertising.',
+    title: 'React Js Development',
+    instructor: 'Sarah Johnson',
+    description: 'Learn HTML, CSS, JavaScript, React, Node.js and more.',
     price: 99.99,
     discountPrice: 79.99,
     duration: '8 weeks',
     level: 'Beginner',
     category: 'Marketing',
-    image: 'https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: Course2,
     rating: 4.6,
     studentsEnrolled: 10890,
     progress: 100,
@@ -39,41 +41,4 @@ export const enrolledCourses: EnrolledCourse[] = [
     enrolledDate: '2024-12-15',
     expiresDate: '2025-12-15'
   },
-  {
-    id: '5',
-    title: 'Advanced JavaScript Programming',
-    instructor: 'Alex Turner',
-    description: 'Deepen your JavaScript knowledge with advanced concepts like closures, prototypes, async programming, and frameworks.',
-    price: 139.99,
-    discountPrice: 99.99,
-    duration: '8 weeks',
-    level: 'Advanced',
-    category: 'Web Development',
-    image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    rating: 4.7,
-    studentsEnrolled: 5920,
-    progress: 35,
-    lessonsCompleted: 7,
-    totalLessons: 20,
-    enrolledDate: '2025-02-20',
-    expiresDate: '2026-02-20'
-  },
-  {
-    id: '4',
-    title: 'UI/UX Design Professional',
-    instructor: 'David Lee',
-    description: 'Learn user research, wireframing, prototyping, and design systems. Create beautiful and functional interfaces that users love.',
-    price: 119.99,
-    duration: '9 weeks',
-    level: 'Intermediate',
-    category: 'Design',
-    image: 'https://images.pexels.com/photos/326501/pexels-photo-326501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    rating: 4.9,
-    studentsEnrolled: 7680,
-    progress: 100,
-    lessonsCompleted: 18,
-    totalLessons: 18,
-    enrolledDate: '2025-01-05',
-    expiresDate: '2026-01-05'
-  }
 ];

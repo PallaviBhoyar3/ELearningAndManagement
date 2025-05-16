@@ -13,7 +13,6 @@ const Dashboard = () => {
     { id: 'enrolled', label: 'My Courses', icon: BookOpen },
     { id: 'progress', label: 'In Progress', icon: Clock },
     { id: 'completed', label: 'Completed', icon: CheckCircle },
-    { id: 'certificates', label: 'Certificates', icon: Award },
   ];
   
   const completedCourses = enrolledCourses.filter(course => course.progress === 100);
@@ -83,29 +82,6 @@ const Dashboard = () => {
             <p className="text-sm text-gray-500 mt-2">
               {((completedCourses.length / enrolledCourses.length) * 100).toFixed(0)}% of your courses completed
             </p>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            className="bg-white rounded-lg shadow-md p-6"
-          >
-            <div className="flex items-center mb-4">
-              <div className="bg-orange-100 p-3 rounded-full">
-                <Star className="h-6 w-6 text-orange-600" />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-medium text-gray-900">Achievements</h3>
-                <p className="text-2xl font-bold">3 badges</p>
-              </div>
-            </div>
-            <div className="flex justify-between mt-2">
-              <img src="https://via.placeholder.com/40" alt="Badge" className="w-10 h-10 rounded-full" />
-              <img src="https://via.placeholder.com/40" alt="Badge" className="w-10 h-10 rounded-full" />
-              <img src="https://via.placeholder.com/40" alt="Badge" className="w-10 h-10 rounded-full" />
-              <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">+2</div>
-            </div>
           </motion.div>
         </div>
         
@@ -190,102 +166,7 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white rounded-lg shadow-md p-6"
-            >
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Continue Learning</h3>
-              {inProgressCourses.length > 0 ? (
-                <div className="space-y-4">
-                  {inProgressCourses.slice(0, 3).map((course) => (
-                    <div key={course.id} className="flex items-start p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                      <img 
-                        src={course.image} 
-                        alt={course.title}
-                        className="w-20 h-20 object-cover rounded"
-                      />
-                      <div className="ml-4 flex-1">
-                        <h4 className="font-medium text-gray-900">{course.title}</h4>
-                        <div className="mt-1 flex items-center text-sm text-gray-500">
-                          <Clock className="h-4 w-4 mr-1" />
-                          <span>Last activity: 2 days ago</span>
-                        </div>
-                        <div className="mt-2">
-                          <div className="flex justify-between text-xs text-gray-500 mb-1">
-                            <span>Progress</span>
-                            <span>{course.progress}%</span>
-                          </div>
-                          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-blue-600 rounded-full" 
-                              style={{ width: `${course.progress}%` }}
-                            ></div>
-                          </div>
-                        </div>
-                      </div>
-                      <button className="ml-4 p-2 text-blue-600 hover:text-blue-800 transition-colors">
-                        <Video className="h-5 w-5" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-gray-500">You don't have any courses in progress</p>
-              )}
-              
-              {inProgressCourses.length > 3 && (
-                <div className="mt-4 text-center">
-                  <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                    View all in-progress courses
-                  </button>
-                </div>
-              )}
-            </motion.div>
-          </div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            className="bg-white rounded-lg shadow-md p-6"
-          >
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Account Settings</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="flex items-center p-2 hover:bg-gray-50 rounded-md text-gray-700 hover:text-blue-600 transition-colors">
-                  <Settings className="h-5 w-5 mr-3 text-gray-400" />
-                  <span>Profile Settings</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 hover:bg-gray-50 rounded-md text-gray-700 hover:text-blue-600 transition-colors">
-                  <FileText className="h-5 w-5 mr-3 text-gray-400" />
-                  <span>Purchase History</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 hover:bg-gray-50 rounded-md text-gray-700 hover:text-blue-600 transition-colors">
-                  <Award className="h-5 w-5 mr-3 text-gray-400" />
-                  <span>Certificates</span>
-                </a>
-              </li>
-            </ul>
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="bg-blue-50 rounded-lg p-4">
-                <h4 className="font-medium text-blue-800 mb-2">Upgrade to Pro</h4>
-                <p className="text-sm text-blue-600 mb-3">Get unlimited access to all premium courses and features.</p>
-                <button className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+      
       </div>
     </div>
   );

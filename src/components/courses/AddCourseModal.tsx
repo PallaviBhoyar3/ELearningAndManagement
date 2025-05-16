@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { X } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { X, Upload } from 'lucide-react';
 import { useCourses } from '../../contexts/CourseContext';
 import toast from 'react-hot-toast';
 
@@ -10,6 +10,8 @@ type AddCourseModalProps = {
 
 const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
   const { addCourse } = useCourses();
+   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     title: '',
     instructor: '',
@@ -24,6 +26,23 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
   const [loading, setLoading] = useState(false);
 
   if (!isOpen) return null;
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5000000) { // 5MB limit
+        toast.error('Image size should be less than 5MB');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+        setFormData(prev => ({ ...prev, image: reader.result as string }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -191,8 +210,50 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-            
+
             <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Course Image
+              </label>
+              <div className="flex items-center space-x-4">
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="px-4 py-2 bg-gray-100 border border-gray-300 rounded-md flex items-center space-x-2 hover:bg-gray-200 transition-colors"
+                >
+                  <Upload className="h-5 w-5" />
+                  <span>Upload Image</span>
+                </button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+              </div>
+              {imagePreview && (
+                <div className="mt-4 relative">
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    className="w-full max-w-md h-48 object-cover rounded-lg"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setImagePreview(null);
+                      setFormData(prev => ({ ...prev, image: '' }));
+                    }}
+                    className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+            </div>
+            
+           {/* <div>
               <label htmlFor="image" className="block text-sm font-medium text-gray-700">
                 Image URL
               </label>
@@ -204,7 +265,7 @@ const AddCourseModal = ({ isOpen, onClose }: AddCourseModalProps) => {
                 onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
-            </div>
+            </div>   */}
             
             <div className="flex justify-end space-x-3">
               <button
